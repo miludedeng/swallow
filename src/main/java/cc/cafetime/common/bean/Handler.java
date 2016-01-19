@@ -18,9 +18,15 @@ public class Handler {
      */
     private Method actionMethod;
 
-    public Handler(Class<?> controllerClass, Method actionMethod){
+    /**
+     * 模块名称
+     */
+    private String module;
+
+    public Handler(Class<?> controllerClass, Method actionMethod, String module) {
         this.controllerClass = controllerClass;
         this.actionMethod = actionMethod;
+        this.module = module;
     }
 
     public Class<?> getControllerClass() {
@@ -29,5 +35,9 @@ public class Handler {
 
     public Method getActionMethod() {
         return actionMethod;
+    }
+
+    public String getModule() {
+        return module;
     }
 }

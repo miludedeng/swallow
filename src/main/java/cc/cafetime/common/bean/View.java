@@ -19,6 +19,12 @@ public class View {
      */
     private Map<String, Object> model;
 
+    /**
+     * 模块module
+     */
+    private String module;
+
+
     public View(String path) {
         this.path = path;
         model = new HashMap<String, Object>();
@@ -37,4 +43,11 @@ public class View {
         return model;
     }
 
+    public String getModule() {
+        return module;
+    }
+
+    public void setModule(String module) {
+        this.module = module;
+    }
 }
