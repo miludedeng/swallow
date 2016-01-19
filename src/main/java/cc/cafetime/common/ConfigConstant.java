@@ -14,5 +14,6 @@ public class ConfigConstant {
     public static final String APP_BASE_PACKAGE = "framework.app.base_package";
     public static final String APP_JSP_PATH = "framework.app.jsp_path";
     public static final String APP_ASSET_PATH = "framework.app.asset_path";
-    public static final java.lang.String APP_UPLOAD_LIMIT = "framework.app.upload_limit";
+    public static final String APP_UPLOAD_LIMIT = "framework.app.upload_limit";
+    public static final String APP_INDEX_PATH = "framework.app.index_path";
 }

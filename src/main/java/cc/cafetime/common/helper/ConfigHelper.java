@@ -2,6 +2,7 @@ package cc.cafetime.common.helper;
 
 import cc.cafetime.common.ConfigConstant;
 import cc.cafetime.common.util.PropsUtil;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.util.Properties;
@@ -63,7 +64,17 @@ public class ConfigHelper {
         return PropsUtil.getString(CONFIG_PROPS, ConfigConstant.APP_ASSET_PATH);
     }
 
+    /**
+     * 获取上传文件大小限制
+     */
     public static int getAppUploadLimit() {
         return NumberUtils.toInt(PropsUtil.getString(CONFIG_PROPS, ConfigConstant.APP_UPLOAD_LIMIT), 0);
+    }
+
+    /**
+     * 获取首页路径
+     */
+    public static String getAppIndexPath() {
+        return PropsUtil.getString(CONFIG_PROPS, ConfigConstant.APP_INDEX_PATH);
     }
 }

@@ -57,9 +57,14 @@ public class DispatcherServlet extends HttpServlet {
         String requestMethod = request.getMethod().toLowerCase();
         String requestPath = request.getPathInfo();
 
-        if (requestPath.equals("/favicon.ico")) {
+        if ("/favicon.ico".equals(requestPath)) {
             return;
         }
+        if ("/".equals(requestPath) && StringUtils.isNotEmpty(ConfigHelper.getAppIndexPath())) {
+            response.sendRedirect(request.getContextPath() + ConfigHelper.getAppIndexPath());
+            return;
+        }
+
         // 获取 Action
         Handler handler = ControllerHelper.getHandler(requestMethod, requestPath);
         if (handler != null) {
@@ -113,7 +118,7 @@ public class DispatcherServlet extends HttpServlet {
             if (path.startsWith("/")) {
                 response.sendRedirect(request.getContextPath() + path);
             } else {
-                if(StringUtils.isNotEmpty(view.getModule())){
+                if (StringUtils.isNotEmpty(view.getModule())) {
                     path = view.getModule() + File.separator + path;
                 }
                 Map<String, Object> model = view.getModel();

@@ -9,17 +9,8 @@
   <meta charset="utf-8">
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
   <title>Dashboard</title>
-  <meta content="lab2023" name="author">
-  <meta content="" name="description">
-  <meta content="" name="keywords">
   <link href="${BASE}/asset/lib/application/application.css" rel="stylesheet" type="text/css">
   <link href="${BASE}/asset/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-  <script></script>
-  <script id="hp_same_"></script>
-  <script id="hp_done_"></script>
-  <meta name="chromesniffer" id="chromesniffer_meta" content="{&quot;Google Analytics&quot;:-1,&quot;jQuery&quot;:&quot;1.10.1&quot;,&quot;jQuery UI&quot;:&quot;1.10.3&quot;,&quot;Modernizr&quot;:&quot;2.6.2&quot;,&quot;Font Awesome&quot;:-1}">
-  <script type="text/javascript" src="chrome-extension://fhhdlnnepfjhlhilgmeepgkhjmhhhjkh/js/detector.js"></script>
 </head>
 <body class="main page" cz-shortcut-listen="true">
   <!-- Navbar -->
@@ -151,60 +142,7 @@
       </div>
     </section>
     <!-- Content -->
-    <div id="content">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <i class="fa fa-beer fa fa-large"></i>
-          Hierapolis Rocks!
-          <div class="panel-tools">
-            <div class="btn-group">
-              <a class="btn" href="http://lab2023.github.io/hierapolis/dashboard.html#">
-                <i class="fa fa-refresh"></i>
-                Refresh statics
-              </a>
-              <a class="btn" data-toggle="toolbar-tooltip" href="http://lab2023.github.io/hierapolis/dashboard.html#" title="" data-original-title="Toggle">
-                <i class="fa fa-chevron-down"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="panel-body">
-          <div class="page-header">
-            <h4>System usage</h4>
-          </div>
-          <div class="progress">
-            <div class="progress-bar progress-bar-success" style="width: 35%"></div>
-            <div class="progress-bar progress-bar-warning" style="width: 20%"></div>
-            <div class="progress-bar progress-bar-danger" style="width: 10%"></div>
-          </div>
-          <div class="page-header">
-            <h4>User statics</h4>
-          </div>
-          <div class="row text-center">
-            <div class="col-md-3">
-              <div style="display:inline;width:140px;height:140px;">
-                <canvas width="140" height="140px"></canvas>
-                <input class="knob second" data-bgcolor="#d4ecfd" data-fgcolor="#30a1ec" data-height="140" data-inputcolor="#333" data-thickness=".3" data-width="140" type="text" value="50" style="width: 74px; height: 46px; position: absolute; vertical-align: middle; margin-top: 46px; margin-left: -107px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 28px; line-height: normal; font-family: Arial; text-align: center; color: rgb(51, 51, 51); padding: 0px; -webkit-appearance: none; background: none;"></div>
-            </div>
-            <div class="col-md-3">
-              <div style="display:inline;width:140px;height:140px;">
-                <canvas width="140" height="140px"></canvas>
-                <input class="knob second" data-bgcolor="#c4e9aa" data-fgcolor="#8ac368" data-height="140" data-inputcolor="#333" data-thickness=".3" data-width="140" type="text" value="75" style="width: 74px; height: 46px; position: absolute; vertical-align: middle; margin-top: 46px; margin-left: -107px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 28px; line-height: normal; font-family: Arial; text-align: center; color: rgb(51, 51, 51); padding: 0px; -webkit-appearance: none; background: none;"></div>
-            </div>
-            <div class="col-md-3">
-              <div style="display:inline;width:140px;height:140px;">
-                <canvas width="140" height="140px"></canvas>
-                <input class="knob second" data-bgcolor="#cef3f5" data-fgcolor="#5ba0a3" data-height="140" data-inputcolor="#333" data-thickness=".3" data-width="140" type="text" value="35" style="width: 74px; height: 46px; position: absolute; vertical-align: middle; margin-top: 46px; margin-left: -107px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 28px; line-height: normal; font-family: Arial; text-align: center; color: rgb(51, 51, 51); padding: 0px; -webkit-appearance: none; background: none;"></div>
-            </div>
-            <div class="col-md-3">
-              <div style="display:inline;width:140px;height:140px;">
-                <canvas width="140" height="140px"></canvas>
-                <input class="knob second" data-bgcolor="#f8d2e0" data-fgcolor="#b85e80" data-height="140" data-inputcolor="#333" data-thickness=".3" data-width="140" type="text" value="85" style="width: 74px; height: 46px; position: absolute; vertical-align: middle; margin-top: 46px; margin-left: -107px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 28px; line-height: normal; font-family: Arial; text-align: center; color: rgb(51, 51, 51); padding: 0px; -webkit-appearance: none; background: none;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
   <!-- Footer -->
   <!-- Javascripts -->
