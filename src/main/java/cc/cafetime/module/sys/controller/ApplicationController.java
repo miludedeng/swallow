@@ -16,4 +16,9 @@ public class ApplicationController {
     public View index(){
         return new View("application.jsp");
     }
+
+    @Action("get:/login")
+    public View login(){
+        return new View("login.jsp");
+    }
 }
