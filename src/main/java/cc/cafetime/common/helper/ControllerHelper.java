@@ -1,10 +1,12 @@
 package cc.cafetime.common.helper;
 
 import cc.cafetime.common.annotation.Action;
+import cc.cafetime.common.annotation.Module;
 import cc.cafetime.common.bean.Handler;
 import cc.cafetime.common.bean.Request;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -38,6 +40,10 @@ public final class ControllerHelper {
                             // 从 Action 注解中获取 URL 映射规则
                             Action action = method.getAnnotation(Action.class);
                             String mapping = action.value();
+                            String module = action.module();
+                            if(StringUtils.isEmpty(module)&&controllerClass.isAnnotationPresent(Module.class)){
+                                module = controllerClass.getAnnotation(Module.class).value();
+                            }
 
                             //验证映射规则
                             if(mapping.matches(("\\w+:/\\w*"))){
@@ -47,7 +53,7 @@ public final class ControllerHelper {
                                     String requestMehod = array[0];
                                     String requestPath = array[1];
                                     Request request = new Request(requestMehod, requestPath);
-                                    Handler handler = new Handler(controllerClass, method);
+                                    Handler handler = new Handler(controllerClass, method, module);
                                     //初始化 Action Map
                                     ACTION_MAP.put(request, handler);
                                 }
