@@ -15,7 +15,7 @@
 <body class="main page" cz-shortcut-listen="true">
   <!-- Navbar -->
   <div class="navbar navbar-default" id="navbar">
-    <a class="navbar-brand" href="http://lab2023.github.io/hierapolis/dashboard.html#"><img src="${BASE}/asset/images/icon_shadow.png" height="40">
+    <a class="navbar-brand" href="http://lab2023.github.io/hierapolis/dashboard.html#"><img src="${BASE}/asset/images/icon_shadow.png" class="logo" height="40">
       Swallow
     </a>
     <ul class="nav navbar-nav pull-right">
