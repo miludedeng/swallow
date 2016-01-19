@@ -1,5 +1,6 @@
 package cc.cafetime.common;
 
+import cc.cafetime.common.annotation.Action;
 import cc.cafetime.common.bean.Data;
 import cc.cafetime.common.bean.Handler;
 import cc.cafetime.common.bean.Param;
@@ -56,8 +57,8 @@ public class DispatcherServlet extends HttpServlet {
         String requestMethod = request.getMethod().toLowerCase();
         String requestPath = request.getPathInfo();
 
-        if(requestPath.equals("/favicon.ico")){
-            return ;
+        if (requestPath.equals("/favicon.ico")) {
+            return;
         }
         // 获取 Action
         Handler handler = ControllerHelper.getHandler(requestMethod, requestPath);
@@ -67,9 +68,9 @@ public class DispatcherServlet extends HttpServlet {
             Object controllerBean = BeanHelper.getBean(controllerClass);
             // 创建请求参数对象
             Param param;
-            if(UploadHelper.isMultipart(request)){
+            if (UploadHelper.isMultipart(request)) {
                 param = UploadHelper.createParam(request);
-            }else{
+            } else {
                 param = RequestHelper.createParam(request);
             }
             // 调用 Action 方法
@@ -82,7 +83,9 @@ public class DispatcherServlet extends HttpServlet {
             }
             // 处理 Action 方法的返回值
             if (result instanceof View) {
-                handleViewResult(request, response, (View) result);
+                View view = (View) result;
+                view.setModule(handler.getModule());
+                handleViewResult(request, response, view);
             } else if (result instanceof Data) {
                 // 返回 JSON 数据
                 handleDataResult(response, (Data) result);
@@ -104,13 +107,15 @@ public class DispatcherServlet extends HttpServlet {
         }
     }
 
-    private void handleViewResult(HttpServletRequest request, HttpServletResponse response, View result) throws IOException, ServletException {
-        View view = result;
+    private void handleViewResult(HttpServletRequest request, HttpServletResponse response, View view) throws IOException, ServletException {
         String path = view.getPath();
         if (StringUtils.isNotEmpty(path)) {
             if (path.startsWith("/")) {
                 response.sendRedirect(request.getContextPath() + path);
             } else {
+                if(StringUtils.isNotEmpty(view.getModule())){
+                    path = view.getModule() + File.separator + path;
+                }
                 Map<String, Object> model = view.getModel();
                 for (Map.Entry<String, Object> entry : model.entrySet()) {
                     request.setAttribute(entry.getKey(), entry.getValue());

@@ -16,4 +16,10 @@ public @interface Action {
      * 请求路类型与路径
      */
     String value();
+
+    /**
+     * 模块名称 模块名称需要与view目录下的模块目录相同
+     */
+
+    String module() default "";
 }
