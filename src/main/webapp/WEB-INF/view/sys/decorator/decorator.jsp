@@ -11,6 +11,7 @@
   <title><sitemesh:write property='title' /></title>
   <link href="${BASE}/asset/lib/application/application.css" rel="stylesheet" type="text/css">
   <link href="${BASE}/asset/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="${BASE}/asset/lib/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css">
 </head>
 <body class="main page" cz-shortcut-listen="true">
   <!-- Navbar -->
@@ -124,8 +125,8 @@
           <a href="http://lab2023.github.io/hierapolis/dashboard.html#">Feedback</a>
         </li>
       </ul>
-      <div data-toggle="tooltip" id="beaker" title="" data-original-title="Made by lab2023"></div>
     </section>
+    <section id="submenu"></section>
     <!-- Tools -->
     <section id="tools">
       <ul class="breadcrumb" id="breadcrumb">
@@ -134,7 +135,7 @@
           <a href="http://lab2023.github.io/hierapolis/dashboard.html#">系统设置</a>
         </li>
       </ul>
-      <div id="toolbar">
+      <!--<div id="toolbar">
         <div class="btn-group">
           <a class="btn" data-toggle="toolbar-tooltip" href="http://lab2023.github.io/hierapolis/dashboard.html#" title="" data-original-title="Building">
             <i class="fa fa-building"></i>
@@ -152,7 +153,7 @@
         </div>
         <div class="label label-danger">Danger</div>
         <div class="label label-info">Info</div>
-      </div>
+      </div>-->
     </section>
     <!-- Content -->
 <sitemesh:write property='body' />
@@ -163,5 +164,6 @@
   <script src="${BASE}/asset/lib/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
   <script src="${BASE}/asset/lib/modernizr/modernizr.min.js" type="text/javascript"></script>
   <script src="${BASE}/asset/lib/application/application.js" type="text/javascript"></script>
+  <script src="${BASE}/asset/lib/application/application2.js" type="text/javascript"></script>
 </body>
 </html>
