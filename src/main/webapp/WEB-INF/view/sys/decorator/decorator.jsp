@@ -3,12 +3,12 @@
 <c:set var="BASE" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <!-- saved from url=(0050)http://lab2023.github.io/hierapolis/dashboard.html -->
-<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en">
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta charset="utf-8">
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-  <title>Dashboard</title>
+  <title><sitemesh:write property='title' /></title>
   <link href="${BASE}/asset/lib/application/application.css" rel="stylesheet" type="text/css">
   <link href="${BASE}/asset/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
@@ -21,28 +21,28 @@
     <ul class="nav navbar-nav pull-right">
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="http://lab2023.github.io/hierapolis/dashboard.html#"> <i class="fa fa-envelope"></i>
-          Messages
+          系统消息
           <span class="badge">5</span> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">New message</a>
+            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">新建消息</a>
           </li>
           <li>
-            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">Inbox</a>
+            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">收件箱</a>
           </li>
           <li>
-            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">Out box</a>
+            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">发件箱</a>
           </li>
           <li>
-            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">Trash</a>
+            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">回收站</a>
           </li>
         </ul>
       </li>
       <li>
         <a href="http://lab2023.github.io/hierapolis/dashboard.html#">
           <i class="fa fa-cog"></i>
-          Settings
+          设置
         </a>
       </li>
       <li class="dropdown user">
@@ -52,11 +52,11 @@
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">Edit Profile</a>
+            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">修改个人信息</a>
           </li>
           <li class="divider"></li>
           <li>
-            <a href="http://lab2023.github.io/">Sign out</a>
+            <a href="http://lab2023.github.io/">退出</a>
           </li>
         </ul>
       </li>
@@ -65,15 +65,31 @@
   <div id="wrapper">
     <!-- Sidebar -->
     <section id="sidebar">
-      <i class="fa fa-align-justify fa fa-large" id="toggle"></i>
+       <i class="fa fa-align-justify fa fa-large" id="toggle"></i>
       <ul id="dock">
-        <li class="active launcher">
+        <li class="active launcher dropdown hover">
           <i class="fa fa-tachometer"></i>
-          <a href="./asset/Dashboard.html">Dashboard</a>
-        </li>
-        <li class="launcher">
-          <i class="fa fa-file-text-alt"></i>
-          <a href="http://lab2023.github.io/hierapolis/forms.html">Forms</a>
+          <a href="./asset/Dashboard.html">系统管理</a>
+          <ul class="dropdown-menu">
+           <li>
+             <a href="http://lab2023.github.io/hierapolis/dashboard.html#">菜单管理</a>
+           </li>
+           <li>
+            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">用户管理</a>
+           </li>
+           <li>
+            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">角色管理</a>
+           </li>
+           <li>
+            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">词典管理</a>
+           </li>
+           <li>
+            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">系统设置</a>
+           </li>
+           <li>
+            <a href="http://lab2023.github.io/hierapolis/dashboard.html#">系统日志</a>
+           </li>
+         </ul>
         </li>
         <li class="launcher">
           <i class="fa fa-table"></i>
@@ -113,12 +129,9 @@
     <!-- Tools -->
     <section id="tools">
       <ul class="breadcrumb" id="breadcrumb">
-        <li class="title">Dashboard</li>
+        <li class="title">系统管理</li>
         <li>
-          <a href="http://lab2023.github.io/hierapolis/dashboard.html#">Lorem</a>
-        </li>
-        <li class="active">
-          <a href="http://lab2023.github.io/hierapolis/dashboard.html#">ipsum</a>
+          <a href="http://lab2023.github.io/hierapolis/dashboard.html#">系统设置</a>
         </li>
       </ul>
       <div id="toolbar">
@@ -142,7 +155,7 @@
       </div>
     </section>
     <!-- Content -->
-
+<sitemesh:write property='body' />
   </div>
   <!-- Footer -->
   <!-- Javascripts -->

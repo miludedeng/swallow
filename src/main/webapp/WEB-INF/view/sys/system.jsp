@@ -2,14 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="BASE" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
-<!-- saved from url=(0050)http://lab2023.github.io/hierapolis/dashboard.html -->
-<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Dashboard</title>
 </head>
 <body class="main page" cz-shortcut-listen="true">
-<content>
     <div id="content">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -64,4 +62,4 @@
         </div>
       </div>
     </div>
-</content>
+</body>

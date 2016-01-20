@@ -12,9 +12,9 @@ import cc.cafetime.common.bean.View;
 @Module("sys")
 public class ApplicationController {
 
-    @Action("get:/")
+    @Action("get:/system")
     public View index(){
-        return new View("application.jsp");
+        return new View("system.jsp");
     }
 
     @Action("get:/login")
