@@ -1,7 +1,6 @@
 package cc.cafetime.common.porxy;
 
 import cc.cafetime.common.util.LoggerUtil;
-import org.apache.log4j.PatternLayout;
 
 import java.lang.reflect.Method;
 
@@ -21,32 +20,42 @@ public abstract class AspectProxy implements Proxy {
 
         begin();
 
-        try{
-            if(intercept(clazz, method, params)){
-                before(clazz, method,params);
+        try {
+            if (intercept(clazz, method, params)) {
+                before(clazz, method, params);
+                result = proxyChain.doProxyChain();
+                after(clazz, method, params,result);
             } else {
                 result = proxyChain.doProxyChain();
             }
-        } catch(Exception e){
-            LoggerUtil.logger().error("proxy failure",e);
-            error(clazz,method, params,e);
+        } catch (Exception e) {
+            LoggerUtil.logger().error("proxy failure", e);
+            error(clazz, method, params, e);
             throw e;
-        } finally{
+        } finally {
             end();
         }
 
-        return null;
+        return result;
     }
 
-    protected void end(){}
+    public void begin() {
+    }
 
-    protected  void error(Class<?> clazz, Method method, Object[] params, Exception e){ }
-
-    private void before(Class<?> clazz, Method method, Object[] params) { }
-
-    private boolean intercept(Class<?> clazz, Method method, Object[] params) {
+    public boolean intercept(Class<?> clazz, Method method, Object[] params) throws Throwable {
         return true;
     }
 
-    private void begin() { }
+    public void before(Class<?> clazz, Method method, Object[] params) throws Throwable {
+    }
+
+    public void after(Class<?> clazz, Method method, Object[] params, Object result) throws Throwable {
+    }
+
+    public void error(Class<?> clazz, Method method, Object[] params, Throwable e) throws Throwable {
+    }
+
+    public void end() throws Throwable {
+    }
+
 }

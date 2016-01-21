@@ -77,4 +77,18 @@ public class ConfigHelper {
     public static String getAppIndexPath() {
         return PropsUtil.getString(CONFIG_PROPS, ConfigConstant.APP_INDEX_PATH);
     }
+
+    /**
+     * 根据 key 获取 String 型值
+     */
+    public static String getString(String key) {
+        return PropsUtil.getString(CONFIG_PROPS, key);
+    }
+
+    /**
+     * 根据 key 获取 Boolean 型值
+     */
+    public static boolean getBoolean(String key) {
+        return PropsUtil.getBoolean(CONFIG_PROPS, key);
+    }
 }

@@ -1,20 +1,22 @@
 package cc.cafetime.common.helper;
 
+import cc.cafetime.common.util.CastUtil;
 import cc.cafetime.common.util.LoggerUtil;
 import cc.cafetime.common.util.PropsUtil;
 import com.google.common.collect.Lists;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.collections4.SetUtils;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 /**
  * Created by liujing on 16/1/3.
@@ -100,6 +102,46 @@ public final class DatabaseHelper {
         Connection conn = getConnection();
         try {
             result = QUERY_RUNNER.query(conn, sql, new MapListHandler(), params);
+        } catch (Exception e) {
+            LoggerUtil.logger().error("execute query failure", e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * 查询一个 Set 集合
+     */
+    public static Set<?> querySet(String sql, Object... params) {
+        Set<Object> result = new HashSet<Object>();
+        List<Map<String, Object>> list;
+        Connection conn = getConnection();
+        try {
+            list = QUERY_RUNNER.query(conn, sql, new MapListHandler(), params);
+            if(CollectionUtils.isNotEmpty(list)){
+                for(Object value : list.get(0).values()){
+                    result.add(value);
+                }
+            }
+        } catch (Exception e) {
+            LoggerUtil.logger().error("execute query failure", e);
+            throw new RuntimeException(e);
+        }
+        return result;
+    }
+
+    /**
+     * 查询一个 String 结果
+     */
+    public static String queryString(String sql, Object... params) {
+        String result = null;
+        List<Map<String, Object>> list;
+        Connection conn = getConnection();
+        try {
+            list = QUERY_RUNNER.query(conn, sql, new MapListHandler(), params);
+            if(CollectionUtils.isNotEmpty(list)){
+                result = CastUtil.castString(list.get(0).get(list.get(0).keySet().toArray()[0]));
+            }
         } catch (Exception e) {
             LoggerUtil.logger().error("execute query failure", e);
             throw new RuntimeException(e);
@@ -234,5 +276,9 @@ public final class DatabaseHelper {
                 CONNECTION_HOLDER.remove();
             }
         }
+    }
+
+    public static DataSource getDataSource() {
+        return DATA_SOURCE;
     }
 }

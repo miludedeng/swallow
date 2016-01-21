@@ -16,4 +16,6 @@ public class ConfigConstant {
     public static final String APP_ASSET_PATH = "framework.app.asset_path";
     public static final String APP_UPLOAD_LIMIT = "framework.app.upload_limit";
     public static final String APP_INDEX_PATH = "framework.app.index_path";
+
+
 }

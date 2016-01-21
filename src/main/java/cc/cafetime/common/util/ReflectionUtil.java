@@ -15,6 +15,19 @@ public class ReflectionUtil {
     /**
      * 创建实例
      */
+    public static Object newInstance(String className) {
+        try {
+            Class clazz = Class.forName(className);
+            return newInstance(clazz);
+        } catch (ClassNotFoundException e) {
+            LoggerUtil.logger().error(" new Instance by class name failure",e);
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * 创建实例
+     */
     public static Object newInstance(Class<?> clazz) {
         Object instance;
         try {

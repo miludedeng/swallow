@@ -2,6 +2,9 @@ package cc.cafetime.common.util;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by liujing on 16/1/3.
  */
