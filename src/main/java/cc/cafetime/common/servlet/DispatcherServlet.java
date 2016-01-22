@@ -1,5 +1,6 @@
-package cc.cafetime.common;
+package cc.cafetime.common.servlet;
 
+import cc.cafetime.common.HelperLoader;
 import cc.cafetime.common.annotation.Action;
 import cc.cafetime.common.bean.Data;
 import cc.cafetime.common.bean.Handler;
